@@ -147,5 +147,36 @@ namespace Calculator.Test.Unit
             Assert.That(() => uut.Divide(2, 0), Throws.TypeOf<DivideByZeroException>());
         }
 
+        //Test of Accumulator
+        [Test]
+        public void Accumulator_holds_value_divie()
+        {
+            uut.Divide(2, 2);
+            Assert.That(uut.Accumulator, Is.EqualTo(1));
+        }
+        [Test]
+        public void Accumulator_holds_value_multiply()
+        {
+            uut.Multiply(2, 2);
+            Assert.That(uut.Accumulator, Is.EqualTo(4));
+        }
+        [Test]
+        public void Accumulator_holds_value_Add()
+        {
+            uut.Add(2, 2);
+            Assert.That(uut.Accumulator, Is.EqualTo(4));
+        }
+        [Test]
+        public void Accumulator_holds_value_substract()
+        {
+            uut.Substract(4, 2);
+            Assert.That(uut.Accumulator, Is.EqualTo(2));
+        }
+        [Test]
+        public void Accumulator_holds_value_Power()
+        {
+            uut.Power(2, 2);
+            Assert.That(uut.Accumulator, Is.EqualTo(4));
+        }
     }
 }

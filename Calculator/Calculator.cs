@@ -8,14 +8,20 @@ namespace Calculate
     {
         public double Add(double a, double b)
         {
+            double temp = (a+b);
+            Accumulator = temp;
             return (a+b);
         }
         public double Substract(double a, double b)
         {
+            double temp = (a-b);
+            Accumulator = temp;
             return (a-b);
         }
         public double Multiply(double a, double b)
         {
+            double temp = (a*b);
+            Accumulator = temp;
             return (a*b);
         }
         public double Divide(double a, double b)
@@ -24,6 +30,8 @@ namespace Calculate
                 throw new DivideByZeroException("You can't divide by zero");
             else
             {
+                double temp = (a / b);
+                Accumulator = temp;
                 return (a / b);
             }
         }
@@ -35,11 +43,15 @@ namespace Calculate
             }
             else
             {
-                return (Math.Pow(a, exp));
+                double temp = (Math.Pow(a, exp));
+                Accumulator = temp;
+                return temp;
             }
 
 
         }
+
+        public double Accumulator { get; private set; }
 
 
     }
