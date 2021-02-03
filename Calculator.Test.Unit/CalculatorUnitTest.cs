@@ -72,6 +72,16 @@ namespace Calculator.Test.Unit
             Assert.That(temp, Is.Negative);
         }
 
+        [Test]
+        public void double_decimal_presicion_mulitply_expected_InRangeOf()
+        {
+            //Act
+            double temp = uut.Multiply(12.31, 10.22);
+
+            //Assert
+            Assert.That(temp, Is.InRange(125.8082, 125.8083));
+        }
+
         //Test of Power()
         [Test]
         public void power_of_double_expected_equal()
@@ -90,15 +100,6 @@ namespace Calculator.Test.Unit
             Assert.That(temp, Is.Positive);
         }
 
-        [Test]
-        public void double_decimal_presicion_expected_InRangeOf()
-        {
-            //Act
-            double temp = uut.Multiply(12.31, 10.22);
-
-            //Assert
-            Assert.That(temp, Is.InRange(125.8082,125.8083));
-        }
 
         //Test of exception pow()
         [Test]
@@ -106,6 +107,38 @@ namespace Calculator.Test.Unit
         {
             Assert.That(() => uut.Power(-2,-2), Throws.TypeOf<ArgumentOutOfRangeException>());
         }
+
+        //Test of divide
+        [Test]
+        public void positive_Divide_doubles_expected_Equalto()
+        {
+            //Act
+            double temp = uut.Divide(15, 2.5);
+
+            //Assert
+            Assert.That(temp, Is.EqualTo(6));
+        }
+
+        [Test]
+        public void negative_Divide_doubles_expected_Equalto()
+        {
+            //Act
+            double temp = uut.Divide(-15, 2.5);
+
+            //Assert
+            Assert.That(temp, Is.EqualTo(-6));
+        }
+
+        [Test]
+        public void longDecimal_Divide_doubles_expected_Equalto()
+        {
+            //Act
+            double temp = uut.Divide(-15.213857, 2.5231124);
+
+            //Assert
+            Assert.That(temp, Is.InRange(-6.03,-6.02979));
+        }
+
 
         //Test of exception Divide()
         [Test]

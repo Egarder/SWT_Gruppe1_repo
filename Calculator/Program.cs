@@ -23,7 +23,7 @@ namespace Calculate
 
             try
             {
-                Console.WriteLine(calc.Divide(2,0));
+                Console.WriteLine(calc.Divide(2,2));
             }
             catch (DivideByZeroException e)
             {
