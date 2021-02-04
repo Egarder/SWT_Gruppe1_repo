@@ -50,7 +50,7 @@ namespace Calculator.Test.Unit
         public void substract_two_negative_doubles_expected_inRange_ok()
         {
             double temp = uut.Substract(-7.88, -2.12);
-            Assert.That(temp, Is.InRange(-5.77,-5.75));
+            Assert.That(temp, Is.InRange(-5.77, -5.75));
         }
 
 
@@ -105,7 +105,7 @@ namespace Calculator.Test.Unit
         [Test]
         public void exception_test_in_pow_of_negatives_thrown()
         {
-            Assert.That(() => uut.Power(-2,-2), Throws.TypeOf<ArgumentOutOfRangeException>());
+            Assert.That(() => uut.Power(-2, -2), Throws.TypeOf<ArgumentOutOfRangeException>());
         }
 
         //Test of divide
@@ -136,7 +136,7 @@ namespace Calculator.Test.Unit
             double temp = uut.Divide(-15.213857, 2.5231124);
 
             //Assert
-            Assert.That(temp, Is.InRange(-6.03,-6.02979));
+            Assert.That(temp, Is.InRange(-6.03, -6.02979));
         }
 
 
@@ -154,24 +154,28 @@ namespace Calculator.Test.Unit
             uut.Divide(2, 2);
             Assert.That(uut.Accumulator, Is.EqualTo(1));
         }
+
         [Test]
         public void Accumulator_holds_value_multiply()
         {
             uut.Multiply(2, 2);
             Assert.That(uut.Accumulator, Is.EqualTo(4));
         }
+
         [Test]
         public void Accumulator_holds_value_Add()
         {
             uut.Add(2, 2);
             Assert.That(uut.Accumulator, Is.EqualTo(4));
         }
+
         [Test]
         public void Accumulator_holds_value_substract()
         {
             uut.Substract(4, 2);
             Assert.That(uut.Accumulator, Is.EqualTo(2));
         }
+
         [Test]
         public void Accumulator_holds_value_Power()
         {
@@ -184,6 +188,23 @@ namespace Calculator.Test.Unit
         {
             uut.Clear();
             Assert.That(uut.Accumulator, Is.Zero);
+        }
+
+        //Test of Add()
+        [Test]
+        public void OverloadedAdd_PositiveNumber_ResultCorrect()
+        {
+            uut.Add(5, 4);
+            // Acummulater == 9
+            Assert.That(uut.Add(3), Is.EqualTo(12));
+        }
+
+        [Test]
+        public void OverloadedAdd_NegativeNumber_ResultCorrect()
+        {
+            uut.Add(5, 4);
+            // Acummulater == 9
+            Assert.That(uut.Add(-12), Is.EqualTo(-3));
         }
     }
 }
