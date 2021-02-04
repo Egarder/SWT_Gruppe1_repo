@@ -22,14 +22,14 @@ namespace Calculate
         }
 
 
-        public double Substract(double a, double b)
+        public double Subtract(double a, double b)
         {
             double temp = (a-b);
             Accumulator = temp;
             return (a-b);
         }
 
-        public double Substract(double a)
+        public double Subtract(double a)
         {
             double result = a - Accumulator;
             Accumulator = result;

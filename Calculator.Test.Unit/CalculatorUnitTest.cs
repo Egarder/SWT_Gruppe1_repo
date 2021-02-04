@@ -31,25 +31,25 @@ namespace Calculator.Test.Unit
             Assert.That(temp, Is.Negative);
         }
 
-        //Test of Substract()
+        //Test of Subtract()
         [Test]
-        public void substract_2_doubles_expected_equal()
+        public void subtract_2_doubles_expected_equal()
         {
-            double temp = uut.Substract(10.5, 2.5);
+            double temp = uut.Subtract(10.5, 2.5);
             Assert.That(temp, Is.EqualTo(8));
         }
 
         [Test]
-        public void substract_negative_double_expected_negative()
+        public void subtract_negative_double_expected_negative()
         {
-            double temp = uut.Substract(0, 2);
+            double temp = uut.Subtract(0, 2);
             Assert.That(temp, Is.Negative);
         }
 
         [Test]
-        public void substract_two_negative_doubles_expected_inRange_ok()
+        public void subtract_two_negative_doubles_expected_inRange_ok()
         {
-            double temp = uut.Substract(-7.88, -2.12);
+            double temp = uut.Subtract(-7.88, -2.12);
             Assert.That(temp, Is.InRange(-5.77, -5.75));
         }
 
@@ -170,9 +170,9 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
-        public void Accumulator_holds_value_substract()
+        public void Accumulator_holds_value_subtract()
         {
-            uut.Substract(4, 2);
+            uut.Subtract(4, 2);
             Assert.That(uut.Accumulator, Is.EqualTo(2));
         }
 

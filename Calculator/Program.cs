@@ -9,7 +9,7 @@ namespace Calculate
             Calculator calc = new Calculator();
 
             Console.WriteLine(calc.Add(-2, 2));
-            Console.WriteLine(calc.Substract(-2, 2));
+            Console.WriteLine(calc.Subtract(-2, 2));
             Console.WriteLine(calc.Multiply(-2, 2));
 
             try
