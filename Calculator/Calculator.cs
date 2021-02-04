@@ -42,6 +42,13 @@ namespace Calculate
             Accumulator = temp;
             return (a*b);
         }
+
+        public double Multiplyer(double a)
+        {
+            double temp = a * Accumulator;
+            Accumulator = temp;
+            return temp;
+        }
         public double Divide(double a, double b)
         {
             if (b == 0)
