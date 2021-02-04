@@ -223,5 +223,20 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Subtract(-3), Is.EqualTo(-12));
         }
 
+
+        [Test]
+        public void OverloadedMultiply_PositiveNumber_ResultCorrect()
+        {
+            //uut.Clear();
+            uut.Multiply(2, 5);
+            Assert.That(uut.Multiply(2), Is.EqualTo(20));
+        }
+
+        [Test]
+        public void OverloadedMultiply_NegativeNumber_ResultCorrecf()
+        {
+            uut.Multiply(2, 5);
+            Assert.That(uut.Multiply(-2), Is.EqualTo(-20));
+        }
     }
 }
