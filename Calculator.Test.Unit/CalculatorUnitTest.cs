@@ -206,5 +206,20 @@ namespace Calculator.Test.Unit
             // Acummulater == 9
             Assert.That(uut.Add(-12), Is.EqualTo(-3));
         }
+
+        [Test]
+        public void OverloadedMultiply_PositiveNumber_ResultCorrect()
+        {
+            //uut.Clear();
+            uut.Multiply(2, 5);
+            Assert.That(uut.Multiply(2), Is.EqualTo(20));
+        }
+
+        [Test]
+        public void OverloadedMultiply_NegativeNumber_ResultCorrecf()
+        {
+            uut.Multiply(2, 5);
+            Assert.That(uut.Multiply(-2), Is.EqualTo(-20));
+        }
     }
 }
