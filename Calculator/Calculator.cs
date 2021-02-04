@@ -16,7 +16,9 @@ namespace Calculate
 
         public double Add(double a)
         {
-            return a + Accumulator;
+            double result = a + Accumulator;
+            Accumulator = result;
+            return result;
         }
 
 
@@ -29,7 +31,9 @@ namespace Calculate
 
         public double Substract(double a)
         {
-            return a - Accumulator;
+            double result = a - Accumulator;
+            Accumulator = result;
+            return result;
         }
 
         public double Multiply(double a, double b)
