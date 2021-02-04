@@ -178,12 +178,5 @@ namespace Calculator.Test.Unit
             uut.Power(2, 2);
             Assert.That(uut.Accumulator, Is.EqualTo(4));
         }
-
-        [Test]
-        public void Clear_AccumulatorIsCleared()
-        {
-            uut.Clear();
-            Assert.That(uut.Accumulator, Is.Zero);
-        }
     }
 }
