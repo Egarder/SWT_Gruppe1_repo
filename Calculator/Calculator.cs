@@ -12,11 +12,23 @@ namespace Calculate
             Accumulator = temp;
             return (a+b);
         }
+
+        public double Add(double a)
+        {
+            return a + Accumulator;
+        }
+
+
         public double Substract(double a, double b)
         {
             double temp = (a-b);
             Accumulator = temp;
             return (a-b);
+        }
+
+        public double Substract(double a)
+        {
+            return a - Accumulator;
         }
         public double Multiply(double a, double b)
         {
