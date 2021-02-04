@@ -29,8 +29,6 @@ namespace Calculate
         public double Substract(double a)
         {
             return a - Accumulator;
-
-            return a - Accumulator;
         }
 
         public double Multiply(double a, double b)
