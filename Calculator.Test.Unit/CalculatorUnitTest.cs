@@ -206,5 +206,22 @@ namespace Calculator.Test.Unit
             // Acummulater == 9
             Assert.That(uut.Add(-12), Is.EqualTo(-3));
         }
+
+        [Test]
+        public void OverloadedSubtract_PositiveNumber_ResultCorrect()
+        {
+            uut.Add(5, 4);
+            // Acummulater == 9
+            Assert.That(uut.Subtract(12), Is.EqualTo(3));
+        }
+
+        [Test]
+        public void OverloadedSubtract_NegativeNumber_ResultCorrect()
+        {
+            uut.Add(5, 4);
+            // Acummulater == 9
+            Assert.That(uut.Subtract(-3), Is.EqualTo(-12));
+        }
+
     }
 }
