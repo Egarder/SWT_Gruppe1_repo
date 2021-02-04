@@ -39,7 +39,7 @@ namespace Calculate
             return (a*b);
         }
 
-        public double Multiplyer(double a)
+        public double Multiply(double a)
         {
             double temp = a * Accumulator;
             Accumulator = temp;
