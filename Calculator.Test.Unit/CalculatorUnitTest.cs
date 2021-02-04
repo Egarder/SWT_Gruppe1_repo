@@ -190,7 +190,7 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Accumulator, Is.Zero);
         }
 
-        //Test of Add()
+        //Test of overloaded Add()
         [Test]
         public void OverloadedAdd_PositiveNumber_ResultCorrect()
         {
