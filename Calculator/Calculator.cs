@@ -6,6 +6,8 @@ namespace Calculate
 {
     public class Calculator
     {
+
+        //Bare en kommentar til jenkins
         public double Add(double a, double b)
         {
             //tester tester
