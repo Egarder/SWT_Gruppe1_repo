@@ -207,7 +207,6 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Add(-12), Is.EqualTo(-3));
         }
 
-        //Test af overloaded Subtract()
         [Test]
         public void OverloadedSubtract_PositiveNumber_ResultCorrect()
         {
@@ -224,7 +223,7 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Subtract(-3), Is.EqualTo(-12));
         }
 
-        //Test af overloaded Multiply
+
         [Test]
         public void OverloadedMultiply_PositiveNumber_ResultCorrect()
         {
