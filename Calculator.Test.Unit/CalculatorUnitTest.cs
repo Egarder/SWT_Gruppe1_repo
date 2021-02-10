@@ -100,6 +100,12 @@ namespace Calculator.Test.Unit
             Assert.That(temp, Is.Positive);
         }
 
+        [Test]
+        public void power_twoNegativeNumbers_ExeptionThrown()
+        {
+            Assert.That(()=>uut.Power(-2, -2), Throws.TypeOf<ArgumentOutOfRangeException>());
+        }
+
 
         //Test of exception pow()
         [Test]
@@ -259,5 +265,20 @@ namespace Calculator.Test.Unit
             uut.Divide(20, 2);
             Assert.That(() => uut.Divide(0), Throws.TypeOf<DivideByZeroException>());
         }
+
+        [Test]
+        public void OverloadedPower_TwoPositiveNumbers_ResultCorrect()
+        {
+            uut.Power(2, 2);
+            Assert.That(uut.Power(2), Is.EqualTo(16));
+        }
+
+        [Test]
+        public void OverloadedPower_OnePositiveOneNegativeNumbers_ResultCorrect()
+        {
+            uut.Power(2, 2);
+            Assert.That(uut.Power(-2), Is.Positive);
+        }
+
     }
 }
