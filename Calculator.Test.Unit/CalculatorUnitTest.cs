@@ -233,10 +233,31 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
-        public void OverloadedMultiply_NegativeNumber_ResultCorrecf()
+        public void OverloadedMultiply_NegativeNumber_ResultCorrect()
         {
             uut.Multiply(2, 5);
             Assert.That(uut.Multiply(-2), Is.EqualTo(-20));
+        }
+
+        [Test]
+        public void OverloadedDivide_PositiveNumber_ResultCorrect()
+        {
+            uut.Divide(20, 2);
+            Assert.That(uut.Divide(2), Is.EqualTo(5));
+        }
+
+        [Test]
+        public void OverloadedDivide_NegativeNumber_ResultCorrect()
+        {
+            uut.Divide(20, 2);
+            Assert.That(uut.Divide(-2), Is.EqualTo(-5));
+        }
+
+        [Test]
+        public void OverloadedDevide_Zero_ExeptionThrown()
+        {
+            uut.Divide(20, 2);
+            Assert.That(() => uut.Divide(0), Throws.TypeOf<DivideByZeroException>());
         }
     }
 }
