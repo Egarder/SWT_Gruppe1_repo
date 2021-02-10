@@ -68,7 +68,9 @@ namespace Calculate
                 throw new DivideByZeroException("You can't divide by zero");
             else
             {
-                return (Accumulator / a);
+                double temp = (Accumulator / a);
+                Accumulator = temp;
+                return temp;
             }
         }
         public double Power(double a, double exp)
@@ -87,16 +89,9 @@ namespace Calculate
 
         public double Power(double exp)
         {
-            if (exp < 0)
-            {
-                throw new ArgumentOutOfRangeException("You cant use power() on 2 negative numbers");
-            }
-            else
-            {
-                double temp = (Math.Pow(a, exp));
-                Accumulator = temp;
-                return temp;
-            }
+            double temp = (Math.Pow(Accumulator, exp));
+            Accumulator = temp;
+            return temp;
         }
 
         public void Clear()
