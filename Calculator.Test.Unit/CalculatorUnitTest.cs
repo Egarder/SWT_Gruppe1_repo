@@ -140,27 +140,27 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
-        public void zero_Divide_By2_Expected0()
+        public void zero_Divide_Bypositive_Expected0()
         {
-            Assert.That(() => uut.Divide(0, 2), Is.EqualTo(0));
+            Assert.That(() => uut.Divide(0.0000, 0.0001), Is.EqualTo(0));
         }
 
         //Test of exception Divide()
         [Test]
         public void Divide_ByZero_ExceptionThrown()
         {
-            Assert.That(() => uut.Divide(1, 0), Throws.TypeOf<DivideByZeroException>());
+            Assert.That(() => uut.Divide(0.0001, 0.0000), Throws.TypeOf<DivideByZeroException>());
         }
         
         [Test]
         public void Divide0_ByZero_ExceptionThrown()
         {
-            Assert.That(() => uut.Divide(0, 0), Throws.TypeOf<DivideByZeroException>());
+            Assert.That(() => uut.Divide(0.0000, 0.0000), Throws.TypeOf<DivideByZeroException>());
         }
         [Test]
         public void Dividenegative_ByZero_ExceptionThrown()
         {
-            Assert.That(() => uut.Divide(-1, 0), Throws.TypeOf<DivideByZeroException>());
+            Assert.That(() => uut.Divide(-0.0001, 0.0000), Throws.TypeOf<DivideByZeroException>());
         }
        
 
