@@ -146,6 +146,11 @@ namespace Calculator.Test.Unit
         {
             Assert.That(() => uut.Divide(2, 0), Throws.TypeOf<DivideByZeroException>());
         }
+        [Test]
+        public void zero_Divide_By2_Expected0()
+        {
+            Assert.That(() => uut.Divide(0, 2), Is.EqualTo(0));
+        }
 
         //Test of Accumulator
         [Test]
