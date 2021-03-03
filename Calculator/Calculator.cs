@@ -62,11 +62,22 @@ namespace Calculate
                 return (a / b);
             }
         }
+        public double Divide(double a)
+        {
+            if (a == 0)
+                throw new DivideByZeroException("You can't divide by zero");
+            else
+            {
+                double temp = (Accumulator / a);
+                Accumulator = temp;
+                return temp;
+            }
+        }
         public double Power(double a, double exp)
         {
             if (a < 0 && exp < 0)
             {
-                throw new ArgumentOutOfRangeException("You cant use power() 2 negative numbers");
+                throw new ArgumentOutOfRangeException("You cant use power() on 2 negative numbers");
             }
             else
             {
@@ -74,6 +85,13 @@ namespace Calculate
                 Accumulator = temp;
                 return temp;
             }
+        }
+
+        public double Power(double exp)
+        {
+            double temp = (Math.Pow(Accumulator, exp));
+            Accumulator = temp;
+            return temp;
         }
 
         public void Clear()

@@ -18,14 +18,14 @@ namespace Calculator.Test.Unit
 
         //Test of Add()
         [Test]
-        public void add_2_doubles_expected_equal()
+        public void Add_TwoDoubles_CorrectResult()
         {
             double temp = uut.Add(2.5, 2.5);
             Assert.That(temp, Is.EqualTo(5));
         }
 
         [Test]
-        public void add_negative_double_to_positive_expected_negative()
+        public void Add_NegativeDoublePositiveDouble_NegativeResult()
         {
             double temp = uut.Add(-4, 2);
             Assert.That(temp, Is.Negative);
@@ -33,21 +33,21 @@ namespace Calculator.Test.Unit
 
         //Test of Subtract()
         [Test]
-        public void subtract_2_doubles_expected_equal()
+        public void Subtract_TwoDoubles_CorrectResult()
         {
             double temp = uut.Subtract(10.5, 2.5);
             Assert.That(temp, Is.EqualTo(8));
         }
 
         [Test]
-        public void subtract_negative_double_expected_negative()
+        public void Subtract_ZeroAndTwo_ResultIsNegative()
         {
             double temp = uut.Subtract(0, 2);
             Assert.That(temp, Is.Negative);
         }
 
         [Test]
-        public void subtract_two_negative_doubles_expected_inRange_ok()
+        public void Subtract_TwoNegativeDoubles_ResultInRange()
         {
             double temp = uut.Subtract(-7.88, -2.12);
             Assert.That(temp, Is.InRange(-5.77, -5.75));
@@ -56,14 +56,14 @@ namespace Calculator.Test.Unit
 
         //Test of Multiply()
         [Test]
-        public void multiply_doubleByInt_expected_equal()
+        public void Multiply_DoubleByInt_ResultIsCorrect()
         {
             double temp = uut.Multiply(2.5, 2);
             Assert.That(temp, Is.EqualTo(5));
         }
 
         [Test]
-        public void multiply_negative_double_expected_negative()
+        public void Multiply_NegativeDouble_ResultIsNegative()
         {
             //Act
             double temp = uut.Multiply(-2.5, 2);
@@ -73,7 +73,7 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
-        public void double_decimal_presicion_mulitply_expected_InRangeOf()
+        public void Multiply_DecimalPrecision_ResultInRange()
         {
             //Act
             double temp = uut.Multiply(12.31, 10.22);
@@ -84,33 +84,33 @@ namespace Calculator.Test.Unit
 
         //Test of Power()
         [Test]
-        public void power_of_double_expected_equal()
+        public void Power_TwoPositiveNumbers_ResultIsCorrect()
         {
             double temp = uut.Power(2, 2);
             Assert.That(temp, Is.EqualTo(4));
         }
 
         [Test]
-        public void power_negative_double_expected_positive()
+        public void Power_OnePositiveOneNegative_ResultIsCorrect()
         {
             //Act
             double temp = uut.Power(-2.5, 2);
 
             //Assert
-            Assert.That(temp, Is.Positive);
+            Assert.That(temp, Is.EqualTo(6.25));
         }
 
-
-        //Test of exception pow()
         [Test]
-        public void exception_test_in_pow_of_negatives_thrown()
+        public void Power_TwoNegativeNumbers_ExceptionThrown()
         {
-            Assert.That(() => uut.Power(-2, -2), Throws.TypeOf<ArgumentOutOfRangeException>());
+            Assert.That(()=>uut.Power(-2, -2), Throws.TypeOf<ArgumentOutOfRangeException>());
         }
+
+
 
         //Test of divide
         [Test]
-        public void positive_Divide_doubles_expected_Equalto()
+        public void Divide_TwoPositiveNumbers_ResultIsCorrect()
         {
             //Act
             double temp = uut.Divide(15, 2.5);
@@ -120,7 +120,7 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
-        public void negative_Divide_doubles_expected_Equalto()
+        public void Divide_TwoNegativeNumbers_ResultIsCorrect()
         {
             //Act
             double temp = uut.Divide(-15, 2.5);
@@ -130,7 +130,7 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
-        public void longDecimal_Divide_doubles_expected_Equalto()
+        public void Divide_DecimalPrecision_ResultIsInRange()
         {
             //Act
             double temp = uut.Divide(-15.213857, 2.5231124);
@@ -142,42 +142,42 @@ namespace Calculator.Test.Unit
 
         //Test of exception Divide()
         [Test]
-        public void divide_by_zero_test_exception_thrown()
+        public void Divide_ByZero_ExceptionThrown()
         {
             Assert.That(() => uut.Divide(2, 0), Throws.TypeOf<DivideByZeroException>());
         }
 
         //Test of Accumulator
         [Test]
-        public void Accumulator_holds_value_divie()
+        public void Divide_TwoPositiveNumbers_AccumulatorIsCorrect()
         {
             uut.Divide(2, 2);
             Assert.That(uut.Accumulator, Is.EqualTo(1));
         }
 
         [Test]
-        public void Accumulator_holds_value_multiply()
+        public void Multiply_TwoPositiveNumbers_AccumulatorIsCorrect()
         {
             uut.Multiply(2, 2);
             Assert.That(uut.Accumulator, Is.EqualTo(4));
         }
 
         [Test]
-        public void Accumulator_holds_value_Add()
+        public void Add_TwoPositiveNumbers_AccumulatorIsCorrect()
         {
             uut.Add(2, 2);
             Assert.That(uut.Accumulator, Is.EqualTo(4));
         }
 
         [Test]
-        public void Accumulator_holds_value_subtract()
+        public void Subtract_TwoPositiveNumbers_AccumulatorIsCorrect()
         {
             uut.Subtract(4, 2);
             Assert.That(uut.Accumulator, Is.EqualTo(2));
         }
 
         [Test]
-        public void Accumulator_holds_value_Power()
+        public void Power_TwoPositiveNumbers_AccumulatorIsCorrect()
         {
             uut.Power(2, 2);
             Assert.That(uut.Accumulator, Is.EqualTo(4));
@@ -207,7 +207,6 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Add(-12), Is.EqualTo(-3));
         }
 
-        //Test af overloaded Subtract()
         [Test]
         public void OverloadedSubtract_PositiveNumber_ResultCorrect()
         {
@@ -224,7 +223,7 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Subtract(-3), Is.EqualTo(-12));
         }
 
-        //Test af overloaded Multiply
+
         [Test]
         public void OverloadedMultiply_PositiveNumber_ResultCorrect()
         {
@@ -234,10 +233,47 @@ namespace Calculator.Test.Unit
         }
 
         [Test]
-        public void OverloadedMultiply_NegativeNumber_ResultCorrecf()
+        public void OverloadedMultiply_NegativeNumber_ResultCorrect()
         {
             uut.Multiply(2, 5);
             Assert.That(uut.Multiply(-2), Is.EqualTo(-20));
         }
+
+        [Test]
+        public void OverloadedDivide_PositiveNumber_ResultCorrect()
+        {
+            uut.Divide(20, 2);
+            Assert.That(uut.Divide(2), Is.EqualTo(5));
+        }
+
+        [Test]
+        public void OverloadedDivide_NegativeNumber_ResultCorrect()
+        {
+            uut.Divide(20, 2);
+            Assert.That(uut.Divide(-2), Is.EqualTo(-5));
+        }
+
+        [Test]
+        public void OverloadedDivide_Zero_ExceptionThrown()
+        {
+            uut.Divide(20, 2);
+            Assert.That(() => uut.Divide(0), Throws.TypeOf<DivideByZeroException>());
+        }
+
+        [Test]
+        public void OverloadedPower_TwoPositiveNumbers_ResultCorrect()
+        {
+            uut.Power(2, 2);
+            Assert.That(uut.Power(2), Is.EqualTo(16));
+        }
+
+        [Test]
+        public void OverloadedPower_OnePositiveOneNegativeNumbers_ResultCorrect()
+        {
+            uut.Power(2, 2);
+            Assert.That(uut.Power(-2), Is.Positive);
+        }
+
+
     }
 }
