@@ -151,6 +151,7 @@ namespace Calculator.Test.Unit
         {
             Assert.That(() => uut.Divide(1, 0), Throws.TypeOf<DivideByZeroException>());
         }
+        
         [Test]
         public void Divide0_ByZero_ExceptionThrown()
         {
