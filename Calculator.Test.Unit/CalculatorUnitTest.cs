@@ -139,18 +139,29 @@ namespace Calculator.Test.Unit
             Assert.That(temp, Is.InRange(-6.03, -6.02979));
         }
 
-
-        //Test of exception Divide()
-        [Test]
-        public void Divide_ByZero_ExceptionThrown()
-        {
-            Assert.That(() => uut.Divide(2, 0), Throws.TypeOf<DivideByZeroException>());
-        }
         [Test]
         public void zero_Divide_By2_Expected0()
         {
             Assert.That(() => uut.Divide(0, 2), Is.EqualTo(0));
         }
+
+        //Test of exception Divide()
+        [Test]
+        public void Divide_ByZero_ExceptionThrown()
+        {
+            Assert.That(() => uut.Divide(1, 0), Throws.TypeOf<DivideByZeroException>());
+        }
+        [Test]
+        public void Divide0_ByZero_ExceptionThrown()
+        {
+            Assert.That(() => uut.Divide(0, 0), Throws.TypeOf<DivideByZeroException>());
+        }
+        [Test]
+        public void Dividenegative_ByZero_ExceptionThrown()
+        {
+            Assert.That(() => uut.Divide(-1, 0), Throws.TypeOf<DivideByZeroException>());
+        }
+       
 
         //Test of Accumulator
         [Test]
